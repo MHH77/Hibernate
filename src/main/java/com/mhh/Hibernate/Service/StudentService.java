@@ -5,7 +5,7 @@ import com.mhh.Hibernate.Repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.List;
 
 
 @Service
@@ -18,7 +18,7 @@ public class StudentService {
         student.setFirstName("ali");
         student.setLastName("bagheri");
         student.setEmail("ali@example.com");
-        Set<String> images = student.getImages();
+        List<String> images = student.getImages();
         images.add("photo1.jpg");
         images.add("photo2.jpg");
         images.add("photo3.jpg");

@@ -3,8 +3,8 @@ package com.mhh.Hibernate.Domain;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,7 +24,8 @@ public class Student {
     @Column(name = "email")
     private String email;
     @ElementCollection
-    @CollectionTable(name = "image", joinColumns = @JoinColumn(name = "student_id"))
+    @CollectionTable(name = "image")
+    @OrderColumn(name = "order_image")
     @Column(name = "file_name")
-    private Set<String> images = new HashSet<String>();
+    private List<String> images = new ArrayList<>();
 }
