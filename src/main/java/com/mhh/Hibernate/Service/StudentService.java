@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 
 @Service
@@ -18,12 +19,13 @@ public class StudentService {
         student.setFirstName("ali");
         student.setLastName("bagheri");
         student.setEmail("ali@example.com");
-        List<String> images = student.getImages();
-        images.add("photo1.jpg");
-        images.add("photo2.jpg");
-        images.add("photo3.jpg");
-        images.add("photo4.jpg");
-        images.add("photo4.jpg");//Duplicate , filtered at java level by Hashset!!
+        //file name    image name
+        Map<String,String> images = student.getImages();
+        images.put("photo1.jpg","photo 1");
+        images.put("photo2.jpg","photo 2");
+        images.put("photo3.jpg","photo 3");
+        images.put("photo4.jpg","photo 4");
+        images.put("photo4.jpg","photo 4");
         return studentRepository.save(student);
     }
 }

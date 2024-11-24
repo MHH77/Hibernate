@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,7 +27,7 @@ public class Student {
     private String email;
     @ElementCollection
     @CollectionTable(name = "image")
-    @OrderColumn(name = "order_image")
-    @Column(name = "file_name")
-    private List<String> images = new ArrayList<>();
+    @MapKeyColumn(name = "file_name")
+    @Column(name = "image_name")
+    private Map<String, String> images = new HashMap<>();
 }
