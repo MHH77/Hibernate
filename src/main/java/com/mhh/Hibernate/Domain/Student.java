@@ -1,7 +1,9 @@
 package com.mhh.Hibernate.Domain;
 
+import com.mhh.Hibernate.utils.ImageNameComparator;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.SortComparator;
 
 import java.util.*;
 
@@ -26,7 +28,7 @@ public class Student {
     @ElementCollection
     @CollectionTable(name = "image")
     @MapKeyColumn(name = "file_name")// defne map key
-    @OrderBy//default is ASC
+    @SortComparator(ImageNameComparator.class)
     @Column(name = "image_name")// define map value
     private Map<String, String> images = new TreeMap<>();
 }
