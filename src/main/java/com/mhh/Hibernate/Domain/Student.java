@@ -3,10 +3,7 @@ package com.mhh.Hibernate.Domain;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,9 +22,10 @@ public class Student {
     private String lastName;
     @Column(name = "email")
     private String email;
+
     @ElementCollection
     @CollectionTable(name = "image")
-    @MapKeyColumn(name = "file_name")
-    @Column(name = "image_name")
-    private Map<String, String> images = new HashMap<>();
+    @org.hibernate.annotations.OrderBy(clause = "file_name DESC ")// just accepted one property --- default is asc
+    @Column(name = "file_name")
+    private Set<String> images = new LinkedHashSet<>();
 }

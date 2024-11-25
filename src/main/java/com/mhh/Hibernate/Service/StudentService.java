@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 
 @Service
@@ -16,16 +17,18 @@ public class StudentService {
 
     public Student saveStudent() {
         Student student = new Student();
-        student.setFirstName("ali");
-        student.setLastName("bagheri");
+        student.setFirstName("ali jooonam");
+        student.setLastName("Molaaa");
         student.setEmail("ali@example.com");
         //file name    image name
-        Map<String,String> images = student.getImages();
-        images.put("photo1.jpg","photo 1");
-        images.put("photo2.jpg","photo 2");
-        images.put("photo3.jpg","photo 3");
-        images.put("photo4.jpg","photo 4");
-        images.put("photo4.jpg","photo 4");
+        Set<String> images = student.getImages();
+        images.add("photo2.jpg");
+        images.add("photo4.jpg");
+        images.add("photo3.jpg");
+        images.add("photo1.jpg");
+        images.add("photo4.jpg");
         return studentRepository.save(student);
+
+
     }
 }
