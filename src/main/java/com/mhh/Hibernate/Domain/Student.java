@@ -25,7 +25,8 @@ public class Student {
 
     @ElementCollection
     @CollectionTable(name = "image")
-    @org.hibernate.annotations.OrderBy(clause = "file_name DESC ")// just accepted one property --- default is asc
-    @Column(name = "file_name")
-    private Set<String> images = new LinkedHashSet<>();
+    @MapKeyColumn(name = "file_name")// defne map key
+    @OrderBy//default is ASC
+    @Column(name = "image_name")// define map value
+    private Map<String, String> images = new TreeMap<>();
 }
