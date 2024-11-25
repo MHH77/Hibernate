@@ -16,19 +16,7 @@ public class StudentService {
     private final StudentRepository studentRepository;
 
     public Student saveStudent() {
-        Student student = new Student();
-        student.setFirstName("ali jooonam");
-        student.setLastName("Molaaa");
-        student.setEmail("ali@example.com");
-        //file name    image name
-        Set<String> images = student.getImages();
-        images.add("photo2.jpg");
-        images.add("photo4.jpg");
-        images.add("photo3.jpg");
-        images.add("photo1.jpg");
-        images.add("photo4.jpg");
-        return studentRepository.save(student);
-
-
+        Long id = 1l;
+        return studentRepository.findById(id).get();
     }
 }
