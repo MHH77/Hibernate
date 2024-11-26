@@ -24,11 +24,6 @@ public class Student {
     private String lastName;
     @Column(name = "email")
     private String email;
-
-    @ElementCollection
-    @CollectionTable(name = "image")
-    @MapKeyColumn(name = "file_name")// defne map key
-    @SortComparator(ImageNameComparator.class)
-    @Column(name = "image_name")// define map value
-    private Map<String, String> images = new TreeMap<>();
+    @Embedded // this annotation is optional  because we set the address class embeddable
+    private Address homeAddress;
 }
