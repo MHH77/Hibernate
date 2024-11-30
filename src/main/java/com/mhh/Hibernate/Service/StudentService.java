@@ -17,12 +17,12 @@ public class StudentService {
         student.setLastName("ghamari");
         student.setEmail("ghamari@gmail.com");
 
-        Address address = new Address();
-        address.setStreet("123 Main St");
-        address.setCity("San Francisco");
-        address.setZipcode("101010");
+        Address workAddress = new Address();
+        workAddress.setStreet("123 Main Work St");
+        workAddress.setCity("Chicago");
+        workAddress.setZipcode("909099");
 
-        student.setHomeAddress(address);
+        student.setWorkAddress(workAddress);
 
         return studentRepository.save(student);
 
