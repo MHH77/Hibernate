@@ -1,5 +1,6 @@
 package com.mhh.Hibernate.Domain;
 
+import com.mhh.Hibernate.Enum.Status;
 import com.mhh.Hibernate.utils.ImageNameComparator;
 import jakarta.persistence.*;
 import lombok.*;
@@ -24,13 +25,7 @@ public class Student {
     private String lastName;
     @Column(name = "email")
     private String email;
-    @Embedded // this annotation is optional  because we set the address class embeddable
-    private Address homeAddress;
-
-    @AttributeOverrides({
-            @AttributeOverride(name = "street",column = @Column(name = "work_street")),
-            @AttributeOverride(name = "city",column = @Column(name = "work_city")),
-            @AttributeOverride(name = "zipcode",column = @Column(name = "work_zipcode"))
-    })
-    private Address workAddress;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private Status status;
 }

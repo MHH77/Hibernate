@@ -1,7 +1,7 @@
 package com.mhh.Hibernate.Service;
 
-import com.mhh.Hibernate.Domain.Address;
 import com.mhh.Hibernate.Domain.Student;
+import com.mhh.Hibernate.Enum.Status;
 import com.mhh.Hibernate.Repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,13 +16,7 @@ public class StudentService {
         student.setFirstName("vahid");
         student.setLastName("ghamari");
         student.setEmail("ghamari@gmail.com");
-
-        Address workAddress = new Address();
-        workAddress.setStreet("123 Main Work St");
-        workAddress.setCity("Chicago");
-        workAddress.setZipcode("909099");
-
-        student.setWorkAddress(workAddress);
+        student.setStatus(Status.ACTIVE);
 
         return studentRepository.save(student);
 
