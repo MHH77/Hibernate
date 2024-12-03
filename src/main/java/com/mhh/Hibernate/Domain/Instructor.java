@@ -10,7 +10,6 @@ import lombok.*;
 @Setter
 @ToString
 @Entity
-@DiscriminatorValue(value = "INSTRUCTOR")
 public class Instructor extends User {
 
     private double salary;
