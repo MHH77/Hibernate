@@ -46,9 +46,3 @@ To run this project, you'll need:
 - **Java 8** or higher
 - **Hibernate** dependencies
 - A **MySQL** or **PostgreSQL** database (can be configured in `hibernate.cfg.xml`)
-
-### Installing
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/hibernate-features.git
