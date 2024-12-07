@@ -12,7 +12,7 @@ public class InstructorService {
 
     public Instructor saveInstructor() {
 
-        Instructor instructor = new Instructor("vahid","ghamari","v@exam.com",2892.53453);
+        Instructor instructor = new Instructor("morteza","ahmadi","m@exam.com",2892.53453);
         return instructorRepository.save(instructor);
     }
 }
