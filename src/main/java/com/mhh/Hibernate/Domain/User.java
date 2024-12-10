@@ -8,9 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@Entity
-@Table(name = "user")
-@Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
 public abstract class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
