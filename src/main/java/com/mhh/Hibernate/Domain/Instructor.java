@@ -1,6 +1,5 @@
 package com.mhh.Hibernate.Domain;
 
-import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.*;
 
